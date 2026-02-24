@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About us – SMART LOGISTICA</title>
+<style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f7f7f7;
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh; /* липкий футер */
+    }
+
+    main { flex: 1; }
+
+    header{
+      background-color: rgb(255, 64, 64);
+      color: white;
+      text-align: center;
+      padding-top: 9px;
+    }
+    header h1{
+      margin: 0;
+      font-size: 42px;
+      letter-spacing: 2px;
+    }
+    nav{
+      margin-top: 10px;
+      padding-bottom: 10px;
+    }
+    nav a, .lang-btn{
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: 500;
+      font-size: 18px;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    nav a:hover, .lang-btn:hover{ color: rgb(196, 196, 196); }
+
+    .about-us{
+      justify-content: center;
+      background-color: white;
+      text-align: center;
+      padding: 20px 10%;
+      margin-top: 45px;
+    }
+    .about-us h1{ font-size: 2rem; margin-top: 0; color: rgb(255, 64, 64); }
+    .about-us p{ font-size: 1.2rem; line-height: 1.6; margin-top: 1rem; }
+
+    .features-about-us{
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin: 3rem 0;
+      padding: 0 10%;
+    }
+    .feature-about-us{
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      padding: 2rem;
+      margin: 1rem;
+      flex: 1 1 260px;
+      max-width: 300px;
+      text-align: center;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .feature-about-us h3{ color: red; }
+    .feature-about-us:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 16px 35px rgba(0, 0, 0, 0.12)
+    }
+
+    .about-section {
+      background: #fff;
+      padding: 2.5rem 10%;
+      margin-top: 2rem;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+      border-radius: 8px;
+      text-align: center;
+    }
+    .about-section h2 {
+      font-size: 2rem;
+      margin-top: 0;
+      color: rgb(255, 64, 64);
+      text-align: center;
+    }
+    
+    .copyright{
+      background-color: rgb(255, 64, 64);
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      flex-shrink: 0;
+    }
+
+@media (max-width: 768px) {
+  header h1 { font-size: 28px; }
+  nav a, .lang-btn { font-size: 16px; margin: 0 0.5rem; }
+  .about-us { margin-top: 30px; padding: 1rem; }
+  .about-us h1 { font-size: 26px; }
+  .about-us p { font-size:1rem; }
+  .features-about-us { padding: 0 1rem; }
+  .feature-about-us { max-width:100%; padding: 1.5rem; }
+  .about-section { padding: 1.5rem 1rem; margin-top:1.5rem; }
+  .about-section h2 { font-size: 26px; }
+}
+</style>
+</head>
+<body>
+  <header>
+    <h1>SMART LOGISTICA</h1>
+    <nav>
+      <a id="menu-home" href="index.html">Home</a>
+      <a id="menu-services" href="services.html">Services</a>
+      <a id="menu-about" href="about.html">About Us</a>
+      <a id="menu-contacts" href="contacts.html">Contacts</a>
+      <a id="menu-job" href="job.html">Job</a>
+      <span class="lang-btn" onclick="setLanguage('en')">EN</span>|
+      <span class="lang-btn" onclick="setLanguage('ru')">RU</span>|
+      <span class="lang-btn" onclick="setLanguage('cn')">CN</span>
+    </nav>
+  </header>
+
+  <main>
+    <section class="about-us">
+      <h1 id="about-title">About our delivery company</h1>
+      <p id="about-desc">
+        Our delivery company provides fast and reliable delivery throughout Kazakhstan. We deliver parcels, documents, boxes, and cargo to all cities and regions of the country. We also provide professional 3PL logistics services: product storage, order fulfillment, returns processing, and integration with online stores.
+      </p>
+    </section>
+
+    <section class="features-about-us">
+      <div class="feature-about-us">
+        <h3 id="feat1-title">Delivery throughout Kazakhstan</h3>
+        <p id="feat1-desc">We deliver to large cities, regional centers, and remote regions.</p>
+      </div>
+      <div class="feature-about-us">
+        <h3 id="feat2-title">3PL — professional logistics</h3>
+        <p id="feat2-desc">Warehousing, accounting, packaging, picking and order processing.</p>
+      </div>
+      <div class="feature-about-us">
+        <h3 id="feat3-title">Control and reliability</h3>
+        <p id="feat3-desc">All shipments are tracked and delivered on time.</p>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <h2 id="mission-title">Our mission and values</h2>
+      <p id="mission-desc1">
+        We strive to make delivery as simple, straightforward, and accessible as possible for every customer in Kazakhstan. Our goal is to ensure the speed and convenience of our service so that sending parcels becomes as easy as shopping online.
+      </p>
+      <p id="mission-desc2">
+        We operate by the principles of transparency, honesty, and respect for our clients. Every order is a responsibility, and we always adhere to this principle.
+      </p>
+    </section>
+
+    <section class="features-about-us">
+      <div class="feature-about-us">
+        <h3 id="feat4-title">750+ cities and villages</h3>
+        <p id="feat4-desc">We deliver to every corner of Kazakhstan—from major cities to the most remote settlements.</p>
+      </div>
+      <div class="feature-about-us">
+        <h3 id="feat5-title">More than 100,000 deliveries per month</h3>
+        <p id="feat5-desc">Our couriers process thousands of orders daily for businesses and private clients.</p>
+      </div>
+      <div class="feature-about-us">
+        <h3 id="feat6-title">Own warehouses</h3>
+        <p id="feat6-desc">3PL warehouses in major cities allow for quick processing and shipping of orders.</p>
+      </div>
+      <div class="feature-about-us">
+        <h3 id="feat7-title">99% of deliveries are on time</h3>
+        <p id="feat7-desc">Clear logistics guarantee reliability and punctuality.</p>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <h2 id="why-title">Why choose us?</h2>
+      <p id="why-desc1"><strong>We work quickly.</strong> Optimized routes allow for reduced delivery times.</p>
+      <p id="why-desc2"><strong>We use modern technologies.</strong> Cargo tracking, warehouse automation, SMS notifications, and accurate delivery time calculations.</p>
+      <p id="why-desc3"><strong>We are customer-focused.</strong> Support responds quickly, and couriers undergo service and security training.</p>
+      <p id="why-desc4"><strong>We help businesses grow.</strong> 3PL logistics reduces costs and speeds up order processing for online stores.</p>
+    </section>
+  </main>
+
+  <footer class="copyright">
+      &copy; 2026 SMART LOGISTICA. All rights reserved.
+  </footer>
+
+  <script>
+    const translations = {
+      en: {
+        "menu-home":"Home","menu-services":"Services","menu-about":"About Us","menu-contacts":"Contacts","menu-job":"Job",
+        "about-title":"About our delivery company",
+        "about-desc":"Our delivery company provides fast and reliable delivery throughout Kazakhstan. We deliver parcels, documents, boxes, and cargo to all cities and regions of the country. We also provide professional 3PL logistics services: product storage, order fulfillment, returns processing, and integration with online stores.",
+        "feat1-title":"Delivery throughout Kazakhstan","feat1-desc":"We deliver to large cities, regional centers, and remote regions.",
+        "feat2-title":"3PL — professional logistics","feat2-desc":"Warehousing, accounting, packaging, picking and order processing.",
+        "feat3-title":"Control and reliability","feat3-desc":"All shipments are tracked and delivered on time.",
+        "mission-title":"Our mission and values","mission-desc1":"We strive to make delivery as simple, straightforward, and accessible as possible for every customer in Kazakhstan. Our goal is to ensure the speed and convenience of our service so that sending parcels becomes as easy as shopping online.","mission-desc2":"We operate by the principles of transparency, honesty, and respect for our clients. Every order is a responsibility, and we always adhere to this principle.",
+        "feat4-title":"750+ cities and villages","feat4-desc":"We deliver to every corner of Kazakhstan—from major cities to the most remote settlements.",
+        "feat5-title":"More than 100,000 deliveries per month","feat5-desc":"Our couriers process thousands of orders daily for businesses and private clients.",
+        "feat6-title":"Own warehouses","feat6-desc":"3PL warehouses in major cities allow for quick processing and shipping of orders.",
+        "feat7-title":"99% of deliveries are on time","feat7-desc":"Clear logistics guarantee reliability and punctuality.",
+        "why-title":"Why choose us?","why-desc1":"We work quickly. Optimized routes allow for reduced delivery times.","why-desc2":"We use modern technologies. Cargo tracking, warehouse automation, SMS notifications, and accurate delivery time calculations.","why-desc3":"We are customer-focused. Support responds quickly, and couriers undergo service and security training.","why-desc4":"We help businesses grow. 3PL logistics reduces costs and speeds up order processing for online stores."
+      },
+      ru: {
+        "menu-home":"Главная","menu-services":"Услуги","menu-about":"О нас","menu-contacts":"Контакты","menu-job":"Работа",
+        "about-title":"О нашей компании доставки","about-desc":"Наша компания доставки обеспечивает быструю и надежную доставку по всему Казахстану. Мы доставляем посылки, документы, коробки и грузы во все города и регионы страны. Также предоставляем профессиональные 3PL-услуги: хранение товаров, выполнение заказов, обработка возвратов и интеграция с интернет-магазинами.",
+        "feat1-title":"Доставка по Казахстану","feat1-desc":"Доставляем в крупные города, областные центры и отдалённые регионы.",
+        "feat2-title":"3PL — профессиональная логистика","feat2-desc":"Складирование, учёт, упаковка, комплектация и обработка заказов.",
+        "feat3-title":"Контроль и надежность","feat3-desc":"Все отправления отслеживаются и доставляются вовремя.",
+        "mission-title":"Наша миссия и ценности","mission-desc1":"Мы стремимся сделать доставку максимально простой, понятной и доступной для каждого клиента в Казахстане. Наша цель — обеспечить скорость и удобство сервиса, чтобы отправка посылок стала такой же простой, как онлайн-шоппинг.","mission-desc2":"Мы работаем по принципам прозрачности, честности и уважения к клиентам. Каждый заказ — это ответственность, и мы всегда придерживаемся этого принципа.",
+        "feat4-title":"750+ городов и поселков","feat4-desc":"Доставляем в каждый уголок Казахстана — от крупных городов до самых удалённых населённых пунктов.",
+        "feat5-title":"Более 100 000 доставок в месяц","feat5-desc":"Наши курьеры обрабатывают тысячи заказов ежедневно для бизнеса и частных клиентов.",
+        "feat6-title":"Собственные склады","feat6-desc":"Склады 3PL в крупных городах позволяют быстро обрабатывать и отправлять заказы.",
+        "feat7-title":"99% доставок вовремя","feat7-desc":"Прозрачная логистика гарантирует надёжность и пунктуальность.",
+        "why-title":"Почему выбирают нас?","why-desc1":"Мы работаем быстро. Оптимизированные маршруты сокращают время доставки.","why-desc2":"Мы используем современные технологии. Отслеживание посылок, автоматизация складов, SMS-уведомления и точный расчёт времени доставки.","why-desc3":"Мы ориентированы на клиента. Служба поддержки отвечает быстро, курьеры проходят обучение по сервису и безопасности.","why-desc4":"Мы помогаем бизнесу расти. Логистика 3PL снижает издержки и ускоряет обработку заказов интернет-магазинов."
+      },
+      cn: {
+        "menu-home":"首页","menu-services":"服务","menu-about":"关于我们","menu-contacts":"联系我们","menu-job":"工作",
+        "about-title":"关于我们的快递公司","about-desc":"我们的快递公司在哈萨克斯坦提供快速可靠的配送。我们向全国各城市和地区投递包裹、文件、箱子和货物。我们还提供专业的3PL物流服务：产品储存、订单履行、退货处理以及与网店的集成。",
+        "feat1-title":"哈萨克斯坦全国配送","feat1-desc":"我们向大城市、区域中心和偏远地区投递。",
+        "feat2-title":"3PL — 专业物流","feat2-desc":"仓储、核算、包装、拣货及订单处理。",
+        "feat3-title":"控制与可靠性","feat3-desc":"所有货件均可跟踪并按时送达。",
+        "mission-title":"我们的使命与价值观","mission-desc1":"我们努力让每位客户的配送尽可能简单、直接和便捷。我们的目标是确保服务的速度和便利，使发送包裹像在线购物一样轻松。","mission-desc2":"我们遵循透明、诚实和尊重客户的原则。每一份订单都是责任，我们始终遵循这一原则。",
+        "feat4-title":"750+城市和村庄","feat4-desc":"我们配送到哈萨克斯坦的每个角落——从主要城市到最偏远的定居点。",
+        "feat5-title":"每月超过100,000次配送","feat5-desc":"我们的快递员每天为企业和个人客户处理数千个订单。",
+        "feat6-title":"自有仓库","feat6-desc":"主要城市的3PL仓库可快速处理和发货。",
+        "feat7-title":"99%准时送达","feat7-desc":"清晰的物流保证可靠性和准时性。",
+        "why-title":"为什么选择我们？","why-desc1":"我们工作迅速。优化的路线可缩短送货时间。","why-desc2":"我们使用现代技术。包裹跟踪、仓库自动化、短信通知和精确的送达时间计算。","why-desc3":"我们以客户为中心。支持团队响应迅速，快递员接受服务和安全培训。","why-desc4":"我们帮助企业成长。3PL物流降低成本，加快网店订单处理速度。"
+      }
+    };
+
+    function setLanguage(lang){
+      const elems = document.querySelectorAll('[id]');
+      elems.forEach(el => {
+        if(translations[lang][el.id]){
+          el.textContent = translations[lang][el.id];
+        }
+      });
+    }
+
+    setLanguage('en'); // язык по умолчанию
+  </script>
+</body>
+</html>

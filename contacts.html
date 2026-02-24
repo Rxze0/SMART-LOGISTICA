@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacts – SMART LOGISTICA</title>
+  <style>
+    html, body { height: 100%; margin: 0; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f7f7f7;
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh; /* липкий футер */
+    }
+    main { flex: 1; }
+    header {
+      background-color: rgb(255, 64, 64);
+      color: white;
+      text-align: center;
+      padding-top: 9px;
+    }
+    header h1 { margin:0; font-size: 42px; letter-spacing: 2px; }
+    nav { margin-top: 10px; padding-bottom: 10px; }
+    nav a, .lang-btn {
+      color: white; text-decoration: none; margin: 0 1rem;
+      font-weight: 500; font-size: 18px; cursor: pointer;
+      transition: color 0.2s;
+    }
+    nav a:hover, .lang-btn:hover { color: rgb(196,196,196); }
+
+    .contact-intro {
+      background: white;
+      margin: 50px auto 0;
+      padding: 40px 12%;
+      max-width: 1100px;
+      text-align: center;
+      border-radius: 14px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+    .contact-intro h2 { color: rgb(255,64,64); font-size: 32px; }
+    .contact-intro p { font-size: 1.2rem; line-height: 1.7; }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      padding: 60px 10%;
+    }
+    .contact-card {
+      background: white;
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .contact-card h3 { color: rgb(255,64,64); margin-top:0; }
+    .contact-card p { line-height: 1.6; }
+    .contact-card:hover { transform: translateY(-4px); box-shadow: 0 16px 35px rgba(0,0,0,0.12); }
+
+    .office {
+      background: white;
+      color: black;
+      padding: 60px 12%;
+      text-align: center;
+    }
+    .office h2 { font-size: 32px; margin-top:0; color: rgb(255,64,64); }
+    .office p { font-size:1.1rem; line-height:1.7; }
+
+    footer.copyright {
+      background-color: rgb(255, 64, 64);
+      color: white;
+      text-align: center;
+      padding: 20px 0 22px;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 768px) {
+      header h1 { font-size:28px; }
+      nav a, .lang-btn { font-size:16px; margin:0 0.5rem; }
+      .contact-intro { margin:30px 1rem 0; padding:25px 1.2rem; }
+      .contact-intro h2 { font-size:26px; }
+      .contact-intro p { font-size:1rem; }
+      .contact-grid { padding:30px 1rem; gap:20px; }
+      .contact-card { padding:20px; }
+      .office { padding:30px 1.2rem; }
+      .office h2 { font-size:26px; }
+      .office p { font-size:1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>SMART LOGISTICA</h1>
+    <nav>
+      <a id="menu-home" href="index.html">Home</a>
+      <a id="menu-services" href="services.html">Services</a>
+      <a id="menu-about" href="about.html">About Us</a>
+      <a id="menu-contacts" href="contacts.html">Contacts</a>
+      <a id="menu-job" href="job.html">Job</a>
+      <span class="lang-btn" onclick="setLanguage('en')">EN</span>|
+      <span class="lang-btn" onclick="setLanguage('ru')">RU</span>|
+      <span class="lang-btn" onclick="setLanguage('cn')">CN</span>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact-intro">
+      <h2 id="contact-title">Contact us</h2>
+      <p id="contact-desc">
+        Our team is always ready to answer your questions, advise you on delivery services, and help you find the optimal logistics solution for both private and business clients.
+      </p>
+    </section>
+
+    <section class="contact-grid">
+      <div class="contact-card">
+        <h3 id="info-title">General information</h3>
+        <p id="info-phone"><strong>Contacts:</strong> +8 (707) 412-80-86</p>
+        <p id="info-email"><strong>Work Email:</strong> starpopstoo24@gmail.com</p>
+      </div>
+    </section>
+
+    <section class="office">
+      <h2 id="office-title">Our head office</h2>
+      <p id="office-address">
+        Republic of Kazakhstan<br>
+        A1, Tolstoy St., Almaty<br>
+        Business center “SMART LOGISTICA”
+      </p>
+      <p id="office-desc">We are always open to partnerships and business proposals.</p>
+    </section>
+  </main>
+
+  <footer class="copyright">
+    &copy; 2026 SMART LOGISTICA. All rights reserved.
+  </footer>
+
+  <script>
+    const translations = {
+      en: {
+        "menu-home":"Home","menu-services":"Services","menu-about":"About Us","menu-contacts":"Contacts","menu-job":"Job",
+        "contact-title":"Contact us",
+        "contact-desc":"Our team is always ready to answer your questions, advise you on delivery services, and help you find the optimal logistics solution for both private and business clients.",
+        "info-title":"General information",
+        "info-phone":"Contacts: +8 (707) 412-80-86",
+        "info-email":"Work Email: starpopstoo24@gmail.com",
+        "office-title":"Our head office",
+        "office-address":"Republic of Kazakhstan\nA1, Tolstoy St., Almaty\nBusiness center “SMART LOGISTICA”",
+        "office-desc":"We are always open to partnerships and business proposals."
+      },
+      ru: {
+        "menu-home":"Главная","menu-services":"Услуги","menu-about":"О нас","menu-contacts":"Контакты","menu-job":"Работа",
+        "contact-title":"Свяжитесь с нами",
+        "contact-desc":"Наша команда всегда готова ответить на ваши вопросы, проконсультировать по услугам доставки и помочь подобрать оптимальное логистическое решение как для частных, так и для бизнес-клиентов.",
+        "info-title":"Общая информация",
+        "info-phone":"Контакты: +8 (707) 412-80-86",
+        "info-email":"Рабочая почта: starpopstoo24@gmail.com",
+        "office-title":"Наш главный офис",
+        "office-address":"Республика Казахстан\nг. Алматы, ул. Толстого, A1\nБизнес-центр “SMART LOGISTICA”",
+        "office-desc":"Мы всегда открыты для партнёрства и бизнес-предложений."
+      },
+      cn: {
+        "menu-home":"首页","menu-services":"服务","menu-about":"关于我们","menu-contacts":"联系我们","menu-job":"工作",
+        "contact-title":"联系我们",
+        "contact-desc":"我们的团队随时准备回答您的问题，为您提供送货服务建议，并帮助私人和企业客户找到最佳物流解决方案。",
+        "info-title":"一般信息",
+        "info-phone":"联系方式: +8 (707) 412-80-86",
+        "info-email":"工作邮箱: starpopstoo24@gmail.com",
+        "office-title":"我们的总部",
+        "office-address":"哈萨克斯坦共和国\n阿拉木图市, 托尔斯泰街A1号\n商务中心 “SMART LOGISTICA”",
+        "office-desc":"我们始终欢迎合作与商业提案。"
+      }
+    };
+
+    function setLanguage(lang){
+      const elems = document.querySelectorAll('[id]');
+      elems.forEach(el => {
+        if(translations[lang][el.id]){
+          el.innerHTML = translations[lang][el.id].replace(/\n/g,'<br>');
+        }
+      });
+    }
+
+    setLanguage('en'); // язык по умолчанию
+  </script>
+</body>
+</html>

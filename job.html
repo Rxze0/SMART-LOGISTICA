@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jobs – SMART LOGISTICA</title>
+
+  <style>
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f7f7f7;
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    main { flex: 1; }
+
+    header{
+      background-color: rgb(255, 64, 64);
+      color: white;
+      text-align: center;
+      padding-top: 9px;
+    }
+    header h1{ margin: 0; font-size: 42px; letter-spacing: 2px; }
+    nav{ margin-top: 18px; padding-bottom: 9px; }
+    nav a, .lang-btn{
+      color: white;
+      text-decoration: none;
+      margin: 0 1.2rem;
+      font-weight: 500;
+      font-size: 18px;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    nav a:hover, .lang-btn:hover{ color: rgb(196,196,196); }
+
+    /* JOB SECTION */
+    .job-hero {
+      background: #fff;
+      padding: 3rem 10%;
+      text-align: center;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+    }
+    .job-hero h2 { color: rgb(255, 64, 64); font-size: 2.2rem; margin-top: 0; }
+    .job-hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto; }
+
+    /* BENEFITS */
+    .benefits { display: flex; flex-wrap: wrap; justify-content: center; margin: 3rem 0; padding: 0 10%; }
+    .benefit {
+      background: #fff;
+      border-radius: 10px;
+      padding: 2rem;
+      margin: 1rem;
+      flex: 1 1 260px;
+      max-width: 300px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      transition: transform 0.25s ease;
+    }
+    .benefit:hover { transform: translateY(-4px); }
+    .benefit h3 { color: rgb(255, 64, 64); margin-top: 0; }
+
+    /* DOCUMENT SECTION */
+    .document-section {
+      background: #fff;
+      padding: 3rem 10%;
+      margin-bottom: 60px;
+      text-align: center;
+      border-radius: 8px;
+    }
+    .document-section h2 { color: rgb(255, 64, 64); margin-top: 0; }
+    .document-box {
+      margin-top: 20px;
+      padding: 30px;
+      border: 2px dashed rgb(255, 64, 64);
+      border-radius: 10px;
+    }
+    .document-box p { font-size: 1.1rem; margin-bottom: 15px; }
+    .document-box a {
+      display: inline-block;
+      padding: 12px 28px;
+      background: rgb(255, 64, 64);
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 1.1rem;
+    }
+    .document-box a:hover { opacity: 0.9; }
+
+    footer.copyright {
+      background-color: rgb(255, 64, 64);
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    @media (max-width: 768px) {
+      header h1 { font-size: 28px; }
+      .job-hero { padding: 2rem 1rem; }
+      .benefits { padding: 0 1rem; }
+      .document-section { padding: 2rem 1rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>SMART LOGISTICA</h1>
+    <nav>
+      <a id="menu-home" href="index.html">Home</a>
+      <a id="menu-services" href="services.html">Services</a>
+      <a id="menu-about" href="about.html">About Us</a>
+      <a id="menu-contacts" href="contacts.html">Contacts</a>
+      <a id="menu-job" href="job.html">Job</a>
+      <span class="lang-btn" onclick="setLanguage('en')">EN</span>|
+      <span class="lang-btn" onclick="setLanguage('ru')">RU</span>|
+      <span class="lang-btn" onclick="setLanguage('cn')">CN</span>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- HERO -->
+    <section class="job-hero">
+      <h2 id="hero-title">Become a Courier at SMART LOGISTICA</h2>
+      <p id="hero-desc">
+        We are looking for responsible and motivated couriers to join our growing logistics team.
+        Flexible schedule, stable income, and professional support guaranteed.
+      </p>
+    </section>
+
+    <!-- BENEFITS -->
+    <section class="benefits">
+      <div class="benefit">
+        <h3 id="benefit1-title">Flexible schedule</h3>
+        <p id="benefit1-desc">Work full-time or part-time — you choose your hours.</p>
+      </div>
+
+      <div class="benefit">
+        <h3 id="benefit2-title">Stable income</h3>
+        <p id="benefit2-desc">Transparent payments and competitive rates.</p>
+      </div>
+
+      <div class="benefit">
+        <h3 id="benefit3-title">Support & training</h3>
+        <p id="benefit3-desc">We help you get started and support you every step.</p>
+      </div>
+    </section>
+
+    <!-- DOCUMENT -->
+    <section class="document-section">
+      <h2 id="doc-title">Courier Application</h2>
+      <div class="document-box">
+        <p id="doc-desc">Please read and open the courier recruitment document before applying.</p>
+        <a id="doc-link" href="courier-application.pdf" target="_blank">Open recruitment document</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="copyright">
+    &copy; 2026 SMART LOGISTICA. All rights reserved.
+  </footer>
+
+  <script>
+    const translations = {
+      en: {
+        "menu-home":"Home","menu-services":"Services","menu-about":"About Us","menu-contacts":"Contacts","menu-job":"Job",
+        "hero-title":"Become a Courier at SMART LOGISTICA",
+        "hero-desc":"We are looking for responsible and motivated couriers to join our growing logistics team. Flexible schedule, stable income, and professional support guaranteed.",
+        "benefit1-title":"Flexible schedule","benefit1-desc":"Work full-time or part-time — you choose your hours.",
+        "benefit2-title":"Stable income","benefit2-desc":"Transparent payments and competitive rates.",
+        "benefit3-title":"Support & training","benefit3-desc":"We help you get started and support you every step.",
+        "doc-title":"Courier Application",
+        "doc-desc":"Please read and open the courier recruitment document before applying.",
+        "doc-link":"Open recruitment document"
+      },
+      ru: {
+        "menu-home":"Главная","menu-services":"Услуги","menu-about":"О нас","menu-contacts":"Контакты","menu-job":"Работа",
+        "hero-title":"Станьте курьером в SMART LOGISTICA",
+        "hero-desc":"Мы ищем ответственных и мотивированных курьеров для нашей растущей логистической команды. Гибкий график, стабильный доход и профессиональная поддержка гарантированы.",
+        "benefit1-title":"Гибкий график","benefit1-desc":"Работайте полный или неполный день — вы сами выбираете часы.",
+        "benefit2-title":"Стабильный доход","benefit2-desc":"Прозрачная оплата и конкурентные ставки.",
+        "benefit3-title":"Поддержка и обучение","benefit3-desc":"Мы помогаем вам начать работу и поддерживаем на каждом этапе.",
+        "doc-title":"Анкета курьера",
+        "doc-desc":"Пожалуйста, прочитайте и откройте документ для набора курьеров перед подачей заявки.",
+        "doc-link":"Открыть документ"
+      },
+      cn: {
+        "menu-home":"首页","menu-services":"服务","menu-about":"关于我们","menu-contacts":"联系我们","menu-job":"工作",
+        "hero-title":"成为SMART LOGISTICA快递员",
+        "hero-desc":"我们正在寻找负责且有动力的快递员加入我们不断壮大的物流团队。保证灵活的时间表、稳定的收入和专业支持。",
+        "benefit1-title":"灵活的时间表","benefit1-desc":"全职或兼职 — 您自己选择工作时间。",
+        "benefit2-title":"稳定收入","benefit2-desc":"透明的工资和有竞争力的报酬。",
+        "benefit3-title":"支持与培训","benefit3-desc":"我们帮助您入职，并在每一步提供支持。",
+        "doc-title":"快递员申请",
+        "doc-desc":"在申请前，请阅读并打开快递员招聘文件。",
+        "doc-link":"打开招聘文件"
+      }
+    };
+
+    function setLanguage(lang){
+      const elems = document.querySelectorAll('[id]');
+      elems.forEach(el => {
+        if(translations[lang][el.id]){
+          el.innerHTML = translations[lang][el.id].replace(/\n/g,'<br>');
+        }
+      });
+    }
+
+    setLanguage('en'); // язык по умолчанию
+  </script>
+
+</body>
+</html>

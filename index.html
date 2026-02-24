@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMART LOGISTICA</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f7f7f7;
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh; /* Для липкого футера */
+    }
+
+    header{
+      background-color: rgb(255, 64, 64);
+      color: white;
+      text-align: center;
+      padding: 9px 0;
+    }
+
+    header h1{
+      margin: 0;
+      font-size: 42px;
+      letter-spacing: 2px;
+    }
+
+    nav{
+      margin-top: 10px;
+    }
+
+    nav a, .lang-btn {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: 500;
+      font-size: 18px;
+      transition: color 0.2s;
+      cursor: pointer;
+    }
+
+    nav a:hover, .lang-btn:hover{
+      color: rgb(196, 196, 196);
+    }
+
+    main {
+      flex: 1;
+    }
+
+    /* ===== Секции ===== */
+    .home, .features, .about, .company-pictures {
+      flex: 1;
+    }
+
+    .home{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-around;
+      background: #fff;
+      padding: 2.5rem 10%;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+      margin-top: 30px;
+    }
+    .home-content { max-width: 520px; }
+    .home h2 { font-size: 2rem; margin-top: 0; color: rgb(255, 64, 64); }
+    .home p { font-size: 1.2rem; margin: 1rem 0 2rem 0; }
+
+    .features {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin: 3rem 0;
+      padding: 0 10%;
+    }
+    .feature {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      padding: 2rem;
+      margin: 1rem;
+      flex: 1 1 260px;
+      max-width: 300px;
+      text-align: center;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .feature h3 { margin-top: 0; color: rgb(255, 64, 64); }
+    .feature p { margin-bottom: 0; }
+    .feature:hover { transform: translateY(-4px); box-shadow: 0 16px 35px rgba(0,0,0,0.12); }
+
+    .about{
+      background-color: white;
+      padding: 18px 10%;
+      border-radius:8px;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .company-pictures{
+      display: flex;           
+      flex-wrap: wrap;          
+      justify-content: space-around;  
+      gap: 20px;               
+      padding: 0 10%;
+      margin-bottom: 50px;
+    }
+
+    .image{
+      width: 400px;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .copyright{
+      background-color: rgb(255, 64, 64);
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      flex-shrink: 0; /* футер не сжимается */
+    }
+
+    .counter-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 40px;
+  padding: 22px 32px;
+
+  background: #ffffff;
+  border-radius: 14px;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.counter-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.12);
+}
+
+.counter-number {
+  font-size: 130px;
+  font-weight: 800;
+  color: rgb(255, 64, 64);
+  line-height: 1;
+  letter-spacing: 1px;
+}
+
+.counter-text {
+  margin-top: 8px;
+  font-size: 20px;
+  color: #666;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+@media (max-width: 768px) {
+  .counter-box {
+    margin: 20px 0;
+    padding: 18px 24px;
+  }
+
+  .counter-number {
+    font-size: 42px;
+  }
+}
+    @media (max-width: 768px) {
+      header h1 { font-size: 28px; }
+      nav a, .lang-btn { font-size: 16px; margin: 0 0.5rem; }
+      .home { flex-direction: column; padding: 1.5rem; text-align: center; }
+      .home-content { max-width: 100%; }
+      .home-img img { width: 100%; max-width: 280px; margin-top: 20px; }
+      .features { padding: 0 1rem; }
+      .feature { max-width: 100%; }
+      .about { margin: 0 1rem 40px; padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SMART LOGISTICA</h1>
+    <nav>
+      <a id="menu-home" href="index.html">Home</a>
+      <a id="menu-services" href="services.html">Services</a>
+      <a id="menu-about" href="about.html">About Us</a>
+      <a id="menu-contacts" href="contacts.html">Contacts</a>
+      <a id="menu-job" href="job.html">Job</a>
+      <span class="lang-btn" onclick="setLanguage('en')">EN</span>|
+      <span class="lang-btn" onclick="setLanguage('ru')">RU</span>|
+      <span class="lang-btn" onclick="setLanguage('cn')">CN</span>
+    </nav>
+  </header>
+
+  <main>
+    <section class="home">
+      <div class="home-content">
+        <h2 id="home-title">Fast, reliable and affordable delivery</h2>
+        <p id="home-desc">
+          SMART LOGISTICA offers same-day delivery, real-time tracking, and convenient door-to-door delivery—all at unbeatable prices. Whether it's a parcel, small package, or pallet, we deliver quickly and reliably!
+        </p>
+      </div>
+       <div class="counter-box">
+       <div class="counter-number" id="counter">0</div>
+       <div class="counter-text" id="counter-text">Parcels delivered</div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="feature">
+        <h3 id="feature1-title">Same day delivery</h3>
+        <p id="feature1-desc">Get your parcels delivered within hours – perfect for urgent needs!</p>
+      </div>
+      <div class="feature">
+        <h3 id="feature2-title">Real-time tracking</h3>
+        <p id="feature2-desc">At every stage of the journey, you will know exactly where your parcel is.</p>
+      </div>
+      <div class="feature">
+        <h3 id="feature3-title">Safe and insured</h3>
+        <p id="feature3-desc">Every shipment is handled with the utmost care and guaranteed for your peace of mind.</p>
+      </div>
+    </section>
+
+    <section class="about">
+      <h2 id="about-title" style="color: rgb(255, 64, 64);">About Delivery company</h2>
+      <p id="about-desc" style="font-size: 17px;">
+        SMART LOGISTICA is committed to redefining logistics for businesses and individuals. With a dedicated fleet and a passionate team, we deliver thousands of packages every day, on time and with a smile.
+      </p>
+    </section>
+
+    <section class="company-pictures">
+      <img class="image" src="img1.jpeg" alt="">
+      <img class="image" src="img2.jpg" alt="">
+      <img class="image" src="img3.webp" alt="">
+    </section>
+  </main>
+
+  <footer class="copyright">
+    &copy; 2026 SMART LOGISTICA. All rights reserved.
+  </footer>
+
+  <script>
+    const translations = {
+      en: {
+        "menu-home":"Home","menu-services":"Services","menu-about":"About Us","menu-contacts":"Contacts","menu-job":"Job",
+        "home-title":"Fast, reliable and affordable delivery",
+        "home-desc":"SMART LOGISTICA offers same-day delivery, real-time tracking, and convenient door-to-door delivery—all at unbeatable prices. Whether it's a parcel, small package, or pallet, we deliver quickly and reliably!",
+        "counter-text":"Parcels delivered",
+        "home-live":"Watch the work in the warehouse in real time:",
+        "home-live-link":"Watch the Live",
+        "feature1-title":"Same day delivery","feature1-desc":"Get your parcels delivered within hours – perfect for urgent needs!",
+        "feature2-title":"Real-time tracking","feature2-desc":"At every stage of the journey, you will know exactly where your parcel is.",
+        "feature3-title":"Safe and insured","feature3-desc":"Every shipment is handled with the utmost care and guaranteed for your peace of mind.",
+        "about-title":"About Delivery company","about-desc":"SMART LOGISTICA is committed to redefining logistics for businesses and individuals. With a dedicated fleet and a passionate team, we deliver thousands of packages every day, on time and with a smile."
+      },
+      ru: {
+        "menu-home":"Главная","menu-services":"Услуги","menu-about":"О нас","menu-contacts":"Контакты","menu-job":"Работа",
+        "home-title":"Быстрая, надёжная и доступная доставка",
+        "home-desc":"SMART LOGISTICA предлагает доставку в тот же день, отслеживание в реальном времени и удобную доставку до двери — всё по лучшим ценам. Будь то посылка, небольшой пакет или паллет, мы доставляем быстро и надёжно!",
+        "counter-text":"Посылки доставлены",
+        "home-live":"Смотрите работу на складе в реальном времени:","home-live-link":"Смотреть онлайн",
+        "feature1-title":"Доставка в тот же день","feature1-desc":"Получите ваши посылки в течение нескольких часов – идеально для срочных заказов!",
+        "feature2-title":"Отслеживание в реальном времени","feature2-desc":"На каждом этапе вы будете точно знать, где находится ваша посылка.",
+        "feature3-title":"Безопасно и застраховано","feature3-desc":"Каждая отправка обрабатывается с максимальной заботой и гарантией для вашего спокойствия.",
+        "about-title":"О компании","about-desc":"SMART LOGISTICA стремится изменить логистику для бизнеса и частных лиц. С преданным флотом и командой профессионалов мы доставляем тысячи посылок каждый день, вовремя и с улыбкой."
+      },
+      cn: {
+        "menu-home":"首页","menu-services":"服务","menu-about":"关于我们","menu-contacts":"联系我们","menu-job":"工作",
+        "home-title":"快速、可靠且实惠的配送",
+        "home-desc":"SMART LOGISTICA 提供當日送達、即時追蹤和便利的門到門配送服務——所有這些都以無與倫比的價格提供。無論是包裹、小件物品還是托盤貨物，我們都能快速可靠地送達！",
+        "counter-text":"包裹已送達",
+        "home-live":"实时观看仓库工作：","home-live-link":"观看直播",
+        "feature1-title":"当天送达","feature1-desc":"在几小时内收到包裹——适合紧急需求！",
+        "feature2-title":"实时追踪","feature2-desc":"在运输的每个阶段，您都能准确知道包裹的位置。",
+        "feature3-title":"安全保险","feature3-desc":"每件货物都经过精心处理，为您的安心提供保障。",
+        "about-title":"关于公司","about-desc":"SMART LOGISTICA 致力于为企业和个人重新定义物流。凭借专业车队和热情团队，我们每天按时送达数千个包裹，并带着微笑。"
+      }
+    };
+
+    function setLanguage(lang){
+      const elems = document.querySelectorAll('[id]');
+      elems.forEach(el=>{
+        if(translations[lang][el.id]){
+          el.textContent = translations[lang][el.id];
+        }
+      });
+    }
+
+    // Язык по умолчанию
+    setLanguage('en');
+  </script>
+  <script src="counter.js"></script>
+</body>
+</html>

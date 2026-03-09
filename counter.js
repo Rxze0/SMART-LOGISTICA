@@ -1,7 +1,7 @@
 // 🔴 НАСТРОЙКИ
-const startValue = 1000000;          // с какого числа начинать
+const startValue = 10000000;          // с какого числа начинать
 const increasePerDay = 5250;    // сколько прибавляется за день
-const startDate = new Date("2025-01-01T00:00:00"); // ДАТА ЗАПУСКА САЙТА
+const startDate = new Date("2026-03-09T00:00:00"); // ДАТА ЗАПУСКА САЙТА
 
 function updateCounter() {
   const now = new Date();
@@ -24,3 +24,4 @@ function updateCounter() {
 // обновляем каждую секунду
 updateCounter();
 setInterval(updateCounter, 1000);
+

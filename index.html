@@ -110,8 +110,9 @@
     }
 
     .image{
-      width: 400px;
-      height: 250px;
+       width: 100%;
+       max-width: 400px;
+       height: auto;
       object-fit: cover;
     }
 
@@ -282,17 +283,21 @@
       }
     };
 
-    function setLanguage(lang){
-      const elems = document.querySelectorAll('[id]');
-      elems.forEach(el=>{
-        if(translations[lang][el.id]){
-          el.textContent = translations[lang][el.id];
-        }
-      });
+   function setLanguage(lang){
+  // сохраняем язык
+  localStorage.setItem("siteLanguage", lang);
+
+  const elems = document.querySelectorAll('[id]');
+  elems.forEach(el=>{
+    if(translations[lang][el.id]){
+      el.textContent = translations[lang][el.id];
     }
+  });
+}
 
     // Язык по умолчанию
-    setLanguage('en');
+    const savedLang = localStorage.getItem("siteLanguage") || "en";
+setLanguage(savedLang);
   </script>
   <script src="counter.js"></script>
 </body>

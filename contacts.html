@@ -175,15 +175,19 @@
     };
 
     function setLanguage(lang){
-      const elems = document.querySelectorAll('[id]');
-      elems.forEach(el => {
-        if(translations[lang][el.id]){
-          el.innerHTML = translations[lang][el.id].replace(/\n/g,'<br>');
-        }
-      });
-    }
+  // сохраняем язык
+  localStorage.setItem("siteLanguage", lang);
 
-    setLanguage('en'); // язык по умолчанию
+  const elems = document.querySelectorAll('[id]');
+  elems.forEach(el=>{
+    if(translations[lang][el.id]){
+      el.textContent = translations[lang][el.id];
+    }
+  });
+}
+
+    const savedLang = localStorage.getItem("siteLanguage") || "en";
+setLanguage(savedLang); // язык по умолчанию
   </script>
 </body>
 </html>
